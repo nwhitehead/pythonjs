@@ -48,7 +48,7 @@ var worker = spawn(function(e) {
             FS.createLazyFile('/lib/python3.5', elem + '.py', absurl + '/lib/python3.5/' + elem + '.py', true, false);
         }
     };
-    importScripts(absurl + '/python.asm.js');
+    importScripts(absurl + '/pyjs/python.asm.js');
     pyexec = Module.cwrap('PyRun_SimpleString', 'number', ['string']);
     var onReady = function() {
         console.log('Worker ready');
