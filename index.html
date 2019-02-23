@@ -46,7 +46,7 @@ var worker = spawn(function(e) {
         FS.mkdir('/lib/python3.5');
         for (var i = 0; i < list.length; i++) {
             var elem = list[i];
-            FS.createLazyFile('/lib/python3.5', elem + '.py', absurl + '/lib/python3.5/' + elem + '.py', true, false);
+            FS.createLazyFile('/lib/python3.5', elem + '.py', absurl + 'pyjs/lib/python3.5/' + elem + '.py', true, false);
         }
     };
     importScripts(absurl + 'pyjs/python.asm.js');
