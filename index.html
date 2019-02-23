@@ -8,7 +8,7 @@
 
 function spawn(fn, setup) {
     // Set variable inside Blob to record absolute url to here
-    var absurl = document.location.protocol + '//' + document.location.host;
+    var absurl = document.location.protocol + '//' + document.location.host + document.location.pathname;
     if (setup === undefined) {
         setup = function(){};
     }
