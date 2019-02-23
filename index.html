@@ -37,7 +37,7 @@ var worker = spawn(function(e) {
     console.log('Worker setup');
     if (typeof(Module) === "undefined") Module = {};
     Module.locateFile = function(path, prefix) {
-        return absurl + '/pyjs' + path;
+        return absurl + 'pyjs/' + path;
     };
     list = ['random', 'warnings', 'types', 'functools', 'collections'];
     Module["preInit"] = function() {
@@ -48,7 +48,7 @@ var worker = spawn(function(e) {
             FS.createLazyFile('/lib/python3.5', elem + '.py', absurl + '/lib/python3.5/' + elem + '.py', true, false);
         }
     };
-    importScripts(absurl + '/pyjs/python.asm.js');
+    importScripts(absurl + 'pyjs/python.asm.js');
     pyexec = Module.cwrap('PyRun_SimpleString', 'number', ['string']);
     var onReady = function() {
         console.log('Worker ready');
