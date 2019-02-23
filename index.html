@@ -37,7 +37,7 @@ var worker = spawn(function(e) {
     console.log('Worker setup');
     if (typeof(Module) === "undefined") Module = {};
     Module.locateFile = function(path, prefix) {
-        return absurl + '/' + path;
+        return absurl + '/pyjs' + path;
     };
     list = ['random', 'warnings', 'types', 'functools', 'collections'];
     Module["preInit"] = function() {
